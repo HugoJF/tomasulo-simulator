@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Starter Template for Bootstrap</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .instruction {
+            background-color: red; !important
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>TODO</h1>
+        <ul>
+            <li>
+                Configurable instruction set
+            </li>
+            <li>
+                <s>Writable code</s>
+            </li>
+            <li>
+                Hovering highlighting
+            </li>
+            <li>
+                Clean code
+            </li>
+            <li>
+                Comment code
+            </li>
+            <li>
+                Stats (cycles to finish, cycles per instruction, other metrics)
+            </li>
+            <li>
+                Compute result at the last execution cycle (and output to RS Result)
+            </li>
+            <li>
+                <s>Prototype `watch` to functions</s>
+            </li>
+            <li>
+                Scrollable timeline
+            </li>
+            <li>
+                CDB should only be used once per cycle
+            </li>
+            <li>
+                Configurable registers
+            </li>
+            <li>
+                Configurable Reservation Stations
+            </li>
+        </ul>
+        <h1>Reservation Stations</h1>
+        <table class="table table-bordered table-striped" border="1">
+            <thead>
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Busy</strong></td>
+                    <td><strong>Op</strong></td>
+                    <td><strong>Vj</strong></td>
+                    <td><strong>Vk</strong></td>
+                    <td><strong>Qj</strong></td>
+                    <td><strong>Qk</strong></td>
+                    <td><strong>A</strong></td>
+                    <td><strong>Result</strong></td>
+                </tr>
+            </thead>
+            <tbody id="reservation_station">
+
+            </tbody>
+        </table>
+
+        <h1>Register Status</h1>
+        <table class="table table-bordered table-striped" border="1">
+            <thead>
+                <tr id="register_header">
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="register_body">
+
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Instructions</h1>
+        <table class="table table-bordered table-striped" border="1">
+            <thead>
+                <tr>
+                    <td><strong>Instruction</strong></td>
+                    <td><strong>Issue</strong></td>
+                    <td><strong>Execute</strong></td>
+                    <td><strong>Write Result</strong></td>
+                </tr>
+            </thead>
+            <tbody id="instructions">
+
+            </tbody>
+        </table>
+
+        <div id="clock-timing" class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;transition:unset">
+                <span class="sr-only">60% Complete</span>
+            </div>
+        </div>
+
+        <textarea id="code" class="form-control" rows="3">L.D R3 44(R2) = 30
+        l.d r3 22(r1) = 2
+        mul.d r1, r2, r3 = 1
+        ADD.D R1, R2, R3 = 2</textarea>
+
+        <button class="btn" id="clock">Clock</button>
+        <button class="btn" id="load">Load code</button>
+        <button class="btn" id="start-auto-clock">Start Clock</button>
+        <button class="btn" id="stop-auto-clock">Stop Clock</button>
+</body>
+
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="tomasulo.js" type="text/javascript"></script>
+</body>
+
+</html>
