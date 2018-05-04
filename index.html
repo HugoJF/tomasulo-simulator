@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Tomasulo Simulator</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -18,11 +18,15 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--style>
-        .instruction {
-            background-color: red; !important
+
+    <style>
+        .highlight {
+            background-color: #fcf8e3 !important;
         }
-    </style>-->
+        .highlight > td {
+            background-color: rgba(255, 255, 255, 0) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,7 +40,7 @@
                 <s>Writable code</s>
             </li>
             <li>
-                Hovering highlighting
+                <s>Hovering highlighting</s>
             </li>
             <li>
                 Clean code
@@ -57,13 +61,16 @@
                 Scrollable timeline
             </li>
             <li>
-                CDB should only be used once per cycle
+                <s>CDB should only be used once per cycle</s>
             </li>
             <li>
                 Configurable registers
             </li>
             <li>
                 Configurable Reservation Stations
+            </li>
+            <li>
+                Highlighting should only highlight dependencies
             </li>
         </ul>
         <h1>Reservation Stations</h1>
@@ -121,10 +128,10 @@
             </div>
         </div>
 
-        <textarea id="code" class="form-control" rows="3">L.D R3 44(R2) = 30
-        l.d r3 22(r1) = 2
-        mul.d r1, r2, r3 = 1
-        ADD.D R1, R2, R3 = 2</textarea>
+        <textarea id="code" class="form-control" rows="3">L.D R3 44(R2)
+        l.d r3 22(r1)
+        mul.d r1, r2, r3
+        ADD.D R1, R2, R3</textarea>
 
         <button class="btn" id="clock">Clock</button>
         <button class="btn" id="load">Load code</button>
@@ -136,7 +143,16 @@
 <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="tomasulo.js" type="text/javascript"></script>
+<script src="bindings.js" type="text/javascript"></script>
+<script src="instruction-definition.js" type="text/javascript"></script>
+<script src="instruction.js" type="text/javascript"></script>
+<script src="issuer.js" type="text/javascript"></script>
+<script src="register.js" type="text/javascript"></script>
+<script src="register-bank.js" type="text/javascript"></script>
+<script src="reservation-station.js" type="text/javascript"></script>
+<script src="reservation-station-pool.js" type="text/javascript"></script>
+<script src="loader.js" type="text/javascript"></script>
+
 </body>
 
 </html>
